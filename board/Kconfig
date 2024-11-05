@@ -47,6 +47,13 @@ menu "Device Support"
 		depends on EXYNOS_9810
 		help
 		  Say Y if you want to include support for Samsung Galaxy S9
+
+        config SAMSUNG_R8S
+                bool "Support for Samsung Galaxy S20 FE"
+                default n
+                depends on EXYNOS_990
+                help
+                  Say Y if you want to include support for Samsung Galaxy S20 FE
 		  
 	config SAMSUNG_X1S
 		bool "Support for Samsung Galaxy S20"
@@ -92,6 +99,7 @@ menu "Device Specific Addresses"
 		default 0x090000000 if SAMSUNG_ZEROFLTE
 		default 0x090000000 if SAMSUNG_DREAMLTE
 		default 0x090000000 if SAMSUNG_STARLTE
+                default 0x090000000 if SAMSUNG_R8S
 		default 0x090000000 if SAMSUNG_X1S
 		default 0x050000000 if SAMSUNG_J4LTE
 		default 0x090000000 if SAMSUNG_J5LTE
@@ -101,6 +109,7 @@ menu "Device Specific Addresses"
 		hex "Ramdisk Entry Address"
 		default 0x082000000 if SAMSUNG_DREAMLTE
 		default 0x084000000 if SAMSUNG_C1S
+                default 0x084000000 if SAMSUNG_R8S
 		default 0x084000000 if SAMSUNG_X1S
 
 	config FRAMEBUFFER_BASE
@@ -113,6 +122,7 @@ menu "Device Specific Addresses"
 		default 0x0e2a00000 if SAMSUNG_ZEROFLTE
 		default 0x0cc000000 if SAMSUNG_DREAMLTE
 		default 0x0cc000000 if SAMSUNG_STARLTE
+                default 0x0f1000000 if SAMSUNG_R8S
 		default 0x0f1000000 if SAMSUNG_X1S
 		default 0x067000000 if SAMSUNG_J4LTE
 		default 0x08e000000 if SAMSUNG_J5LTE
@@ -128,6 +138,7 @@ menu "Device Specific Addresses"
 		default 1440 if SAMSUNG_ZEROFLTE
 		default 1440 if SAMSUNG_DREAMLTE
 		default 1440 if SAMSUNG_STARLTE
+                default 1080 if SAMSUNG_R8S
 		default 1440 if SAMSUNG_X1S
 		default 720 if SAMSUNG_J4LTE
 		default 720 if SAMSUNG_J5LTE
@@ -143,6 +154,7 @@ menu "Device Specific Addresses"
 		default 2560 if SAMSUNG_ZEROFLTE
 		default 2960 if SAMSUNG_DREAMLTE
 		default 2960 if SAMSUNG_STARLTE
+                default 2400 if SAMSUNG_R8S
 		default 3200 if SAMSUNG_X1S
 		default 1280 if SAMSUNG_J4LTE
 		default 1280 if SAMSUNG_J5LTE
@@ -158,6 +170,7 @@ menu "Device Specific Addresses"
 		default 4 if SAMSUNG_ZEROFLTE
 		default 4 if SAMSUNG_DREAMLTE
 		default 4 if SAMSUNG_STARLTE
+                default 4 if SAMSUNG_R8S
 		default 4 if SAMSUNG_X1S
 		default 4 if SAMSUNG_J4LTE
 		default 3 if SAMSUNG_J5LTE
